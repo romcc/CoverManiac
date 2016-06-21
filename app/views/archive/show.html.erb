@@ -1,0 +1,18 @@
+<div id="banner" style="background-image: url("../../assets/images/guns.jpg")">
+					<section class="container">
+						<h2>List of all previous competitions</h2>
+						
+					</section>
+					<% @competitions.each do |competition| %>
+					<% if competition != @competitions.last %>
+					<div id='video'>
+					<%= competition.title %> <br>
+					<%= image_tag competition.image.url(:medium) %><br>
+					<%= link_to 'Show', competition, class: 'mybutton' %>
+					<% if current_user.admin? %>
+					<%= link_to 'Edit', edit_competition_path(competition), class: 'mybutton' %>
+					<% end %>
+					</div>
+					<%end%>
+					<%end%>
+</div>

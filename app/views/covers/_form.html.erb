@@ -1,0 +1,34 @@
+<%= form_for(@cover) do |f| %>
+  <% if @cover.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cover.errors.count, "error") %> prohibited this cover from being saved:</h2>
+
+      <ul>
+      <% @cover.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ytlink %><br>
+    <%= f.text_field :ytlink %>
+  </div>
+  <div class="field">
+    <%= f.label :competition %><br>
+    <%= f.check_box :competition %>
+  </div>
+  <div class="actions" style="float:left; margin-top:14px;">
+    <%= f.submit %>
+  </div>
+<% end %>

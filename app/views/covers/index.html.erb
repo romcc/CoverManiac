@@ -1,0 +1,21 @@
+<h1 id="logo" style="text-align:center;">Latest covers</h1>
+
+    <% @covers.reverse_each do |cover| %>
+    <div id='video'>
+      <strong><%= cover.title %></strong> <br/><br />
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= cover.ytlink %>" frameborder="0" allowfullscreen></iframe><br /><br />
+      <%= cover.author %><br /><br />
+      <% if user_signed_in? %>
+      <%= link_to 'Show', cover, class:'mybutton' %>
+      <% if current_user.admin? %>
+      <%= link_to 'Edit', edit_cover_path(cover), class:'mybutton' %>
+      <% end %>
+      <% end %>
+    </div>
+    <% end %>
+
+
+<br>
+ <% if user_signed_in? %>
+<%= link_to 'New Cover', new_cover_path, class: 'mybutton', id: 'postavitev' %>
+<% end %>

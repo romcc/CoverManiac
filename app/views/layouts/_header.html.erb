@@ -1,0 +1,49 @@
+<!-- Header Wrapper -->
+			<div class="wrapper style1">
+			
+			<!-- Header -->
+				<div id="header">
+					<div class="container">
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li class="active"><%= link_to "CoverManiac", root_path %></li>
+									 <% if user_signed_in? %>
+									 
+									<li>
+										<a href="">Videos</a>
+										<ul>
+											<li><%= link_to "New Cover", new_cover_path  %></li>
+											<li><%= link_to "Video Competiton", competitions_path  %></li>
+											<% if current_user.admin? %>
+											<li><%= link_to "New Competition", new_competition_path %></li>
+											<% end %>
+											<li><%= link_to "Archive", archives_show_path %></li>
+										</ul>
+									</li>
+									<li><%= link_to "Message board", message_boards_path %> </li>
+									<li><%= link_to "Profile", edit_user_registration_path %></li>
+									<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+									<% else %>
+									<li><%= link_to "Sign Up", new_user_registration_path %></li>
+									<li><%= link_to "Log in", new_user_session_path %></li>
+									 <% end %>
+									 <li><%= link_to "Help", instructions_show_path  %></li>
+								</ul>
+							</nav>
+	
+					</div>
+				</div>
+				<% if user_signed_in? %>
+				<% else %>
+			<!-- Banner -->
+				<div id="banner">
+					<section class="container">
+						<h2>Cover Maniac</h2>
+						<span>Sign Up today</span>
+						<p>Website for all who enjoy good music</p>
+					</section>
+				</div>
+<% end %>
+			</div>
+		

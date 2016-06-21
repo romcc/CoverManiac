@@ -1,0 +1,17 @@
+
+<div id='board'>
+<p>
+  <strong><%= @message_board.title %></strong><br>
+  <span style="font-size:14px;"><%= @message_board.created_at %></span>
+</p>
+
+<p style="font-size:19px;">
+  <%= @message_board.message %>
+</p>
+<div class='link'>
+<% if current_user.admin? %>
+<%= link_to 'Edit', edit_message_board_path(@message_board), class: 'mybutton' %>
+<% end %>
+<%= link_to 'Back', message_boards_path, class: 'mybutton' %>
+</div>
+</div>

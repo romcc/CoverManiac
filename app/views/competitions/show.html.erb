@@ -1,0 +1,14 @@
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @competition.title %>
+</p>
+<%= image_tag @competition.image.url(:medium) %>
+<p>
+  <strong>Description:</strong>
+  <%= @competition.description %>
+</p>
+
+<%= link_to 'Edit', edit_competition_path(@competition), class: 'mybutton' %> 
+<%= link_to 'Back', competitions_path, class: 'mybutton' %>

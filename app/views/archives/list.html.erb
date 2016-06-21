@@ -1,0 +1,18 @@
+ <div id="banner">
+					<section class="container">
+						<h2>See videos from this competition!</h2>
+					</section>
+</div>
+  <% @coverji.each do |cover| %>
+      <div id='video'>
+        <strong><%= cover.title %></strong><br /><br />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= cover.ytlink %>" frameborder="0" allowfullscreen></iframe><br /><br />
+        <%= cover.author %><br /><br />
+        <% if user_signed_in? %>
+        <%= link_to 'Show', cover, class: 'mybutton' %>
+        <%= link_to 'Edit', edit_cover_path(cover), class: 'mybutton' %>
+        <% end %>
+      </div>
+      <%end%>
+
+<%= link_to 'Back', archives_show_path, class: 'mybutton', id: 'postavitev' %>

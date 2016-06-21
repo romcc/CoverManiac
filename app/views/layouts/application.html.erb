@@ -2,13 +2,27 @@
 <html>
 <head>
   <title>CoverManiac</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/jquery.min.js"></script>
+		<script src="/assets/jquery.dropotron.min.js"></script>
+		<script src="/assets/skel.min.js"></script>
+		<script src="/assets/skel-layers.min.js"></script>
+		<script src="/assets/init.js"></script>
+			<link rel="stylesheet" href="/assets/skel.css" />
+			<link rel="stylesheet" href="/assets/style.css" />
+			<link rel="stylesheet" href="/assets/buttons.css" />
+			<link rel="stylesheet" href="/assets/styleing.css" />
 </head>
-<body>
+<body class="homepage">
+  <%= render 'layouts/header' %>
 
+<div class="wrapper style2">
+<section class="container">
 <%= yield %>
-
+</section>
+</div>
 </body>
 </html>

@@ -1,0 +1,45 @@
+#message{
+    padding:40px 0px 50px 0px;
+    text-align:center;
+    border:1px solid grey;
+    border-radius:6px;
+    width:25%;
+    margin:30px 30px 30px 30px;
+    display:inline-block;
+    background-color: #d1d1e0;
+}
+
+#video{
+    padding:30px 0px 30px 0px;
+    text-align:center;
+    border:1px solid grey;
+    border-radius:6px;
+    width:49%;
+    margin:2px 2px 2px 2px;
+    display:inline-block;
+    background-color: #d1d1e0;
+}
+
+#board{
+    padding:40px 0px 30px 0px;
+    text-align:center;
+    border:1px solid grey;
+    border-radius:6px;
+    width:80%;
+    margin:30px 150px 30px;
+    display:inline-block;
+    background-color: #d1d1e0
+}
+
+#board strong {
+    font-size:25px;
+}
+
+#video strong {
+    font-size:25px;
+}
+
+.link{
+    float:right;
+    margin-right: 25px;
+}

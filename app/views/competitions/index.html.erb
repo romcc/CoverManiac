@@ -1,0 +1,26 @@
+<div id="banner">
+					<section class="container" >
+						<h2>Current Competiton</h2>
+						<h3>Vote for your favourite covers to find out which is the best!</h3>
+					</section>
+					<div style="margin:auto;"><%= image_tag(@competitions.last.image.url, style: "width:25%") %></div>
+</div>
+
+
+    <% @coverji.reverse_each do |cover| %>
+      <% if cover.competition == true %>
+      <% if cover.competition_id == @competitions.last.id %>
+      <div id='video'>
+        <strong><%= cover.title %></strong><br /><br />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= cover.ytlink %>" frameborder="0" allowfullscreen></iframe><br /><br />
+        <%= cover.author %><br /><br />
+        <% if user_signed_in? %>
+        <%= link_to 'Show', cover, class: 'mybutton' %>
+        <%= link_to 'Edit', edit_cover_path(cover), class: 'mybutton' %>
+        <% end %>
+      </div>
+      <%end%>
+      <%end%>
+    <% end %>
+
+<br>

@@ -1,0 +1,10 @@
+<h1>Editing Message Board</h1>
+
+<%= render 'form' %>
+
+<% if current_user.admin?  %>
+<%= button_to 'Destroy', @message_board, method: :delete, data: { confirm: 'Are you sure?' }, class: 'mybutton', style: "float:left; margin-top:14px; margin-left: 10px;" %> 
+<% end %>
+<%= link_to 'Back', @message_board, class: 'mybutton', style: "float:right; margin-top:14px;" %>
+<br><br><br><br><br>
+<br><br><br><br><br>

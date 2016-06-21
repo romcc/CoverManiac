@@ -1,0 +1,54 @@
+<div id="main" class="wrapper style4">
+<div class="container">
+<div class="row">
+<div id="content" class="videoo">
+
+<table>
+  <tr>
+    <td colspan="2"><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @cover.ytlink %>" frameborder="0" allowfullscreen></iframe></td>
+  </tr>
+  <tr>
+    <td><strong>Title:</strong></td>
+    <td><%= @cover.title %></td>
+  </tr>
+  <tr>
+    <td><strong>Description:</strong></td>
+    <td><%= @cover.description %></td>
+  </tr>
+  <tr>
+    <td><strong>Author:</strong></td>
+    <td><%= @cover.author %></td>
+  </tr>
+  <tr>
+    <% if current_user.admin? %>
+    <td><%= @avg_review %> <img src="/assets/horns_black.png" style="height:50px; width:50px"></td>
+    <td><%= link_to 'Edit', edit_cover_path(@cover), class: 'mybutton' %></td>
+    <% end %>
+  </tr>
+</table>
+<% if user_signed_in? %>
+</div>
+<div class="comments">
+  <h2>Comments</h2>
+  <br>
+  <% if @reviews.blank? %>
+    <h3>No comments were written yet.<br> Be the first one!</h3>
+  <% else %>
+    <% @reviews.each do |review| %>
+    <% @user = User.find(review.user_id) %>
+      <div class="reviews">
+        <span style="font-weight:bold;" >User: <%= @user.email %></span><br>
+        <span style="font-size:11px;" ><%= review.created_at %></span>
+        <p style="border-bottom: 1px solid gray;"><%= review.comment %></p>
+      </div>
+    <% end %>
+  <% end %>
+  <%= link_to "Write a comment", new_cover_review_path(@cover), class: 'mybutton' %>
+</div>
+<% else %>
+<p>Login to write or see a comment!</p>
+<% end %>
+</div>
+</div>
+<td><%= link_to 'Back', covers_path, class: 'mybutton', id: 'postavitev' %></td>
+</div>

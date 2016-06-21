@@ -1,0 +1,17 @@
+<h1>Message Board</h1>
+
+
+       <% @message_boards.reverse.each do |message_board| %>
+       <div id="message">
+        <strong><%= message_board.title %></strong><br />
+        <span style="font-size:14px;"><%= message_board.created_at %></span><br /><br />
+        <%= link_to 'Show', message_board, class: 'mybutton' %>
+        </div>
+    <% end %>
+
+<br>
+<% if current_user.admin? %>
+<div class="link">
+<%= link_to 'New Message board', new_message_board_path, class: 'mybutton' %>
+</div>
+<% end %>
